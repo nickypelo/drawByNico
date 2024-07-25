@@ -1,0 +1,21 @@
+---
+
+import CheckOut from '../components/preact/CheckOut';
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title='Cart | Portraits'>
+    <div class="flex flex-col justify-between ">
+        <header class="mt-20 text-center font-semibold text-2xl sm:text-4xl">
+            Checkout
+        </header>
+        <main class="min-h-70v">
+            <section class="section-setup">
+                <CheckOut client:load />
+            </section>
+        </main>
+        
+    </div>
+</Layout>
+

@@ -1,0 +1,34 @@
+---
+import Pricelist from "../components/pricelist.astro";
+import '../styles.css';
+
+import UserOrder  from "../components/preact/UserOrder.jsx";
+import Layout from "../layouts/Layout.astro"
+
+import lupe from '../images/Website/lupe-draw.jpg' 
+
+---
+
+
+<Layout title="Order | Potraits">
+    <!-- header section -->
+     <header class="mt-20 mb-8">
+        <div class=" mx-auto max-w-[300px] rounded-full sm:bg-front bg-cover bg-center border-8 border-stone-800" >
+            <img src={lupe.src} alt="header_image" class="rounded-full md:hover:transform transition-transform duration-1000  md:hover:translate-x-[220px] border-4 border-stone-800">
+        </div>
+        <div class="mt-6 font-bold font-roboto border-b-4 text-stone-500 text-lg w-fit text-center px-4 mx-auto md:text-2xl">
+             Pricelist
+        </div>
+     </header>
+
+    <main>
+        <section class="section-setup">
+            <Pricelist/>
+        </section>
+    
+        <!-- make an order section -->
+        <article class="my-8">
+            <UserOrder client:load/>
+        </article>
+    </main>
+</Layout>

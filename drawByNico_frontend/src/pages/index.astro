@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles.css';
+import size from '../images/sizing.jpg';
+
+import DrawingContainer from '../components/drawing_container.astro';
+import CarouselTestimonials from '../components/carousel_testimonials.astro';
+
+import saida from '../images/Website/size-A4-face.jpg';
+import sean from '../images/Website/size-A2.jpg';
+import lwando from '../images/Website/size-A3.jpg';
+
+import lala from '../images/Website/size-A4-color.jpg';
+import lebo from '../images/Website/size-A5-color.jpg';
+import palesa from '../images/Website/size-A2-color.jpg';
+
+import custom1 from '../images/Website/custom-sne.jpg';
+import custom2 from '../images/Website/size-A4-cust.jpg';
+import custom3 from '../images/Website/size-A4-pen.jpg';
+import Pricelist from '../components/pricelist.astro';
+import Header from '../components/header.astro';
+
+
+---
+
+<Layout title="Home | Portraits">
+    <!-- header section -->
+     <Header/>
+    <main>
+
+   <!--color pencil collection -->
+   <article class="py-4">
+    <div class="section-setup text-center my-6">
+        <div>
+            <h2 class="font-serif text-3xl font-medium mb-2 w-fit mx-auto pt-2 border-t-2 border-stone-500">
+                Color Pencil Collection
+            </h2>
+            <p class="font-roboto text-base mb-4 mx-auto w-fit pb-2 border-b-2 border-stone-500">
+                 Most recent color pencil orders.
+            </p>
+        </div>
+
+        <section class="flex justify-around items-end flex-wrap gap-4">
+            <DrawingContainer 
+                image={lala.src}
+                color='black'
+                size='A4 drawing'
+                myWidth="w-[200px]"
+            />
+            <DrawingContainer 
+                image={lebo.src}
+                color='black'
+                size='A5 drawing'
+                myWidth="w-[160px]"
+            />
+            <DrawingContainer 
+                image={palesa.src}
+                color='black'
+                size='A2 drawing'
+                myWidth="w-[270px]"
+            />
+        </section>
+    </div>
+    </article>
+
+
+    <!-- pencil collection -->
+     <article class="bg-stone-300 py-4 ">
+        <div class="section-setup text-center my-6">
+            <div>
+                <h2 class="font-serif text-3xl font-medium mb-2">
+                    Pencil Collection
+                </h2>
+                <p class="font-roboto text-sm mb-4">
+                     Most recent pencil orders.
+                </p>
+            </div>
+
+            <section class="flex justify-around items-end flex-wrap gap-4">
+                <DrawingContainer 
+                    image={saida.src}
+                    color='black',
+                    size='A5 drawing',
+                    myWidth="w-[160px]"
+                />
+                <DrawingContainer 
+                    image={sean.src}
+                    color='black'
+                    size='A2 drawing'
+                    myWidth="w-[270px]"
+
+                />
+                <DrawingContainer 
+                    image={lwando.src}
+                    color='black'
+                    size='A3 drawing'
+                    myWidth="w-[240px]"
+                />
+            </section>
+        </div>
+     </article>
+
+  
+     <!-- size guide section -->
+    <article>
+        <div class="section-setup text-center my-6">
+            <div>
+                <h2 class="font-serif text-3xl font-medium mb-2 w-fit mx-auto pt-2 border-t-2 border-stone-500">
+                    Drawing Sizes
+                </h2>
+                <p class="font-roboto mb-4 text-base mb-4 mx-auto w-fit pb-2 border-b-2 border-stone-500">
+                     Guide to decide what size is right for you.
+                </p>
+            </div>
+            <section class="lg:grid grid-cols-2 gap-2 items-center">
+                <figure class="max-w-[600px] mx-auto">
+                    <img src={size.src} alt="size guide" class="shadow-lg border-2 border-black">    
+                </figure>
+                <Pricelist/>
+            </section>
+        </div>
+    </article>
+
+     <!--special requests collection -->
+     <article class="bg-amber-200 py-4">
+        <div class="section-setup text-center my-6">
+            <div>
+                <h2 class="font-serif text-3xl font-medium mb-2">
+                    Special Request Collection
+                </h2>
+                <p class="font-roboto text-sm mb-4">
+                     Most recent custom drawing orders.
+                </p>
+                <p></p>
+            </div>
+
+            <section class="sm:grid grid-cols-2 items-center">
+                <div class="grid grid-cols-4">
+                    <div class="col-span-2 border-4 bg-footer bg-cover border-black">
+                    </div>
+                    <div class="col-span-2">
+                        <div  class="grid grid-cols-2">
+                            <div>
+                                <img src={custom2.src} alt="" class="border-4 border-black">
+                            </div>
+                            <div>
+                                <img src={custom3.src} alt="" class="border-4 border-black">
+                            </div>
+                        </div>
+                        <div>
+                            <img src={custom1.src} alt="" class="border-4 border-black">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- special order contact -->
+                 <div class="p-8 sm:text-left">
+                    <p class="mb-4">If you feel like mixing it up or have a unique idea, contact me and lets see what we can create.</p>
+                    <button class="px-6 py-3 bg-stone-600 text-white font-bold w-fit">Contact</button>
+                 </div>
+            </section>
+        </div>
+     </article>
+
+     <!-- testimonials -->
+      <section class="mb-8">
+        <div class="section-setup">
+            <div class="text-center my-6">
+                <h2 class="font-serif text-3xl font-medium mb-2 w-fit mx-auto pt-2 border-t-2 border-stone-500">
+                    Testimonials
+                </h2>
+                <p class="font-roboto text-base mb-4 mx-auto w-fit pb-2 border-b-2 border-stone-500">
+                     Feedback from clients
+                </p>
+            </div>
+            <CarouselTestimonials/>
+        </div>
+      </section>
+    </main>
+</Layout>
+

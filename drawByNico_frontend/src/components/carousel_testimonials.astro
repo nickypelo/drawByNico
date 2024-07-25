@@ -1,0 +1,74 @@
+---
+const details = [
+  { message: "Definitely gonna order another one. This turned out better than I expected. You are gifted.", insta: '@mfuse__' },
+  { message: "I can't believe you were able to draw my old photo. Its like I am looking at myself in better quality.", insta: '@rene_mokoe' },
+  { message: 'AI can never replace traditional artistry. Thank you for your service. Will be hanging this on my wall.', insta: '@themba_ma' },
+  { message: "You have outdone yourself my friend. At this rate, I won't have any more room for all these drawings", insta: '@kamo_kub' },
+  { message: 'I love the attention to detail. My friend will love this. Thank you!!', insta: '@street_fighter' },
+
+];
+
+import instaIcon from '../images/insta.png';
+---
+
+<style>
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+    .carousel-slide {
+      min-width: 100%;
+    }
+  </style>
+  
+  <div class="relative w-full max-w-4xl mx-auto overflow-hidden">
+    <div class="carousel-track">
+      {details.map((detail) => (
+        <div class="carousel-slide">
+          <div class="h-64 rounded-full">
+            <div class="mx-auto text-center  h-full max-w-[400px] auto">
+              <p class="p-4 mb-3 font-serif text-2xl">{detail.message}</p>
+              <p class="flex items-center justify-center">- <span class="mx-2"><img src={instaIcon.src} alt="instagram" width="18px"></span>{detail.insta}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <button id="prevSlide" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-stone-600 text-white py-2 px-4 text-2xl">
+      ‹
+    </button>
+    <button id="nextSlide" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-stone-600 text-white px-4 py-2 text-2xl">
+      ›
+    </button>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentIndex = 0;
+      const slides = document.querySelectorAll('.carousel-slide');
+      const totalSlides = slides.length;
+      const track = document.querySelector('.carousel-track') as HTMLElement;
+      const prevButton = document.getElementById('prevSlide') as HTMLElement;
+      const nextButton = document.getElementById('nextSlide') as HTMLElement;
+  
+      if (!track || !prevButton || !nextButton) {
+        console.error('Carousel elements not found');
+        return;
+      }
+  
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+  
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+  
+      function updateCarousel() {
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+      }
+    });
+  </script>

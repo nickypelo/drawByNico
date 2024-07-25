@@ -1,0 +1,64 @@
+---
+import  CartIcon  from './preact/CartIcon.component.jsx';
+import '../styles.css'
+
+---
+
+<div class="border-b z-50 fixed top-0 w-full bg-white font-light font-serif">
+    <div class="section-setup">
+        <div class="flex justify-between items-center">
+            <div class="font- text-3xl ">
+                <a href="/">NP <span class="text-xs border-r pr-2 border-black">DrawByNico</span></a>
+            </div>
+            <nav>
+                <ul class="flex gap-5 md:gap-8 items-center">
+                    <li class="hidden md:block">
+                        <a href="/order">Order</a>
+                    </li>
+                    <li>
+                        <CartIcon client:load/>
+                    </li>
+                    <li class="md:hidden cursor-pointer" id="dropButton">
+                        <div>
+                            <span class="mb-1 w-2 h-1 bg-stone-500 block"></span>
+                            <span class="mb-1 w-5 h-1 bg-stone-500 block"></span>
+                            <span class="mb-1 w-4 h-1 bg-stone-500 block"></span>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            
+        </div>
+    </div>
+    <div id="drop" class="hidden text-center p-4">
+        <ul>
+            <li><a href="#about">About me</a></li>
+            <li><a href="/order">Order</a></li>
+            <li><a href="">Contact</a></li>
+            <li>
+                <a href="https://www.instagram.com/by_nicodemus/" target="_blank" rel="noopener noreferrer">
+                   Instagram
+                </a>
+            </li>
+            <li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const drop = document.getElementById("drop") ;
+    const dropButton = document.getElementById("dropButton");
+
+    dropButton!.addEventListener("click",()=>{
+        console.log("Nick");
+        if(drop!.classList.contains("hidden")){
+            drop!.classList.remove("hidden")
+        }
+        else{
+            drop!.classList.add("hidden")
+        }
+        
+    })
+
+</script>

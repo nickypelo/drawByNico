@@ -1,0 +1,18 @@
+---
+interface Props {
+    image: string,
+    size: string,
+    color: string,
+    myWidth: string
+
+}
+
+const {image, size, color, myWidth } = Astro.props;
+---
+
+<div class=`bg-stone-200 mb-4 p-4 w-[290px] shadow-lg shadow-stone-400 transform transition-transform duration-500 hover:scale-110`>
+    <figure>
+        <img src={image} alt=`${size} size image` class={`${myWidth} border-${color} mx-auto border-8`}>
+        <figcaption class="font-black my-2">{size}</figcaption>
+    </figure>
+</div>
