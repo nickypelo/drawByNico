@@ -1,7 +1,7 @@
 # DrawByNico
 
 ## Overview
-DrawByNico is an ecommerce website for hobby of doing hand-drawn drawings.
+DrawByNico is an ecommerce website for my hobby of doing hand-drawn drawings.
 It is hosted on vercel using the domain https://draw-by-nico.vercel.app. It is not active as I am not pursuing the business currently but its a blueprint if I ever decide to.
 
 ## Responsiveness
