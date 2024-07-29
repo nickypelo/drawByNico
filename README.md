@@ -9,6 +9,7 @@ The website is responsive across all devices; laptops, mobile phones and tablets
 
 ## Tech Stack
 The following was used to build the application:
+
     - Astro:
         - Web Framework for content driven websites
         - Minimal javascript
