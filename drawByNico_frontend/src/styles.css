@@ -1,3 +1,17 @@
 .section-setup{
     @apply max-w-primary mx-auto px-4 py-2;
 }
+
+.main-bg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('./images/Website/collection.jpg');
+    
+}
+
+.special-bg{
+    background-image: url('./images/Website/collection-light.jpg');
+    background-size: cover;
+
+}
