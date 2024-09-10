@@ -15,3 +15,9 @@
     background-size: cover;
 
 }
+
+.order-bg{
+    background-size: cover;
+    background-position: center;
+    background-image: url('./images/Website/lupe-real.jpg');
+}
